@@ -88,9 +88,3 @@ class ActivityListController : VBox() {
         val colorDictionary = mapOf(0.4 to "#ff0000", 0.5 to "#9B870C", 0.9 to "#00ff00")
     }
 }
-
-data class ActivityItems(
-    val health: Double,
-    val activityName: String?,
-    val activityDescription: String?
-)
