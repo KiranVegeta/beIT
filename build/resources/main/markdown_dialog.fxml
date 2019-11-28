@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import org.kotlin.track.MarkdownView?>
+<fx:root xmlns:fx="http://javafx.com/fxml"
+         type="com.jfoenix.controls.JFXDialogLayout"
+         prefHeight="400"
+         prefWidth="750"
+>
+    <heading>
+        <Label fx:id="headingLabel"/>
+    </heading>
+    <body>
+        <HBox prefWidth="700" spacing="12.0">
+            <VBox spacing="6.0">
+                <Hyperlink fx:id="markdownHelpLink" text="Markdown"/>
+                <TextArea fx:id="textArea" prefHeight="350" prefWidth="350" VBox.vgrow="ALWAYS" wrapText="true"/>
+            </VBox>
+            <VBox spacing="6.0">
+                <Label text="Preview"/>
+                <HBox prefWidth="350">
+                    <MarkdownView fx:id="markdownView" VBox.vgrow="ALWAYS"/>
+                </HBox>
+            </VBox>
+        </HBox>
+    </body>
+    <actions>
+        <JFXButton fx:id="cancelButton" text="CANCEL" defaultButton="true" onAction="#onCancel"/>
+        <JFXButton fx:id="okButton" text="OK" defaultButton="true" onAction="#onOK"/>
+    </actions>
+
+</fx:root>

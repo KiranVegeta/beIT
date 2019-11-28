@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import javafx.geometry.Insets?>
+<?import com.jfoenix.controls.JFXToolbar?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.Tooltip?>
+<?import com.jfoenix.controls.JFXTreeView?>
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="org.kotlin.track.TasksController"
+      prefHeight="850.0" prefWidth="550.0">
+    <JFXToolbar VBox.vgrow="ALWAYS" minWidth="550.0" maxHeight="30.0" style="-fx-background-color: #3b5998;">
+        <leftItems>
+            <JFXButton prefHeight="20.0" prefWidth="20.0">
+                <graphic>
+                    <FontAwesomeIcon glyphName="ARROW_LEFT" glyphStyle="-fx-fill: white;"/>
+                </graphic>
+                <tooltip>
+                    <Tooltip text="Go to Activity List"/>
+                </tooltip>
+            </JFXButton>
+        </leftItems>
+        <rightItems>
+            <JFXButton fx:id="settingsIcon" prefHeight="20.0" prefWidth="20.0">
+                <graphic>
+                    <FontAwesomeIcon glyphName="GEAR" glyphStyle="-fx-fill: white;"/>
+                </graphic>
+                <tooltip>
+                    <Tooltip text="Add tasks/ sub tasks"/>
+                </tooltip>
+            </JFXButton>
+        </rightItems>
+    </JFXToolbar>
+    <HBox>
+        <VBox HBox.hgrow="ALWAYS" maxWidth="200.0" alignment="TOP_CENTER" spacing="50.0">
+            <padding>
+                <Insets top="20.0" bottom="20.0"/>
+            </padding>
+            <Label text="GOOD" textFill="#3b5998"/>
+            <ProgressIndicator HBox.hgrow="ALWAYS" progress="0.5" maxWidth="80.0" maxHeight="180"/>
+        </VBox>
+        <VBox HBox.hgrow="ALWAYS" minHeight="850.0">
+            <JFXTreeView fx:id="tasksTree" minHeight="850.0"/>
+        </VBox>
+
+    </HBox>
+</VBox>

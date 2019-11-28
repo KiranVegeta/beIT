@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import javafx.geometry.Insets?>
+<?import com.jfoenix.controls.JFXToolbar?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.Tooltip?>
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="org.kotlin.track.ActivityListController"
+      fx:id="rootPane"
+      prefHeight="850.0" prefWidth="550.0">
+        <JFXToolbar VBox.vgrow="ALWAYS" minWidth="550.0" maxHeight="30.0" style="-fx-background-color: #3b5998;">
+            <rightItems>
+                <JFXButton prefHeight="20.0" prefWidth="20.0" onAction="#createActivity">
+                    <graphic>
+                        <FontAwesomeIcon glyphName="PLUS" glyphStyle="-fx-fill: white;"/>
+                    </graphic>
+                    <tooltip>
+                        <Tooltip text="Add Activity"/>
+                    </tooltip>
+                </JFXButton>
+            </rightItems>
+        </JFXToolbar>
+    <HBox>
+        <VBox HBox.hgrow="ALWAYS" fx:id="overallHealth" maxWidth="275.0" alignment="TOP_CENTER" spacing="50.0">
+            <padding>
+                <Insets top="20.0" bottom="20.0"/>
+            </padding>
+            <Label text="GOOD" textFill="#3b5998"/>
+            <ProgressIndicator HBox.hgrow="ALWAYS" progress="0.5" prefWidth="150" prefHeight="180"/>
+        </VBox>
+        <VBox HBox.hgrow="ALWAYS" fx:id="activityHolder" minHeight="850.0">
+            <JFXListView fx:id="activityItems" minHeight="850.0"/>
+        </VBox>
+    </HBox>
+</VBox>

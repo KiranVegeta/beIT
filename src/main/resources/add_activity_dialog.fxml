@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import com.jfoenix.controls.JFXDialogLayout?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<fx:root xmlns:fx="http://javafx.com/fxml"
+         type="com.jfoenix.controls.JFXDialogLayout">
+    <heading>
+        <Label fx:id="headerLabel"/>
+    </heading>
+    <body>
+        <VBox fx:id="content" spacing="10">
+            <JFXTextField fx:id="nameField"/>
+            <Label text="NAME" />
+            <JFXTextField fx:id="descField" />
+            <Label text="DESCRIPTION" />
+        </VBox>
+    </body>
+    <actions>
+        <JFXButton fx:id="okButton" text="OK"/>
+        <JFXButton fx:id="cancelButton" text="CANCEL"/>
+    </actions>
+</fx:root>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import com.jfoenix.controls.JFXDialogLayout?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<fx:root xmlns:fx="http://javafx.com/fxml"
+         type="com.jfoenix.controls.JFXDialogLayout">
+    <heading>
+        <Label fx:id="headerLabel"/>
+    </heading>
+    <body>
+        <VBox spacing="40">
+            <HBox alignment="TOP_RIGHT" VBox.vgrow="ALWAYS">
+                <Hyperlink fx:id="expectedCalculation" text="Expected Calculations"/>
+            </HBox>
+        <VBox fx:id="content" spacing="20" VBox.vgrow="ALWAYS">
+            <VBox VBox.vgrow="ALWAYS" spacing="10">
+                <JFXTextField fx:id="addItemsField"/>
+                <Label text="Add Item" />
+            </VBox>
+            <VBox VBox.vgrow="ALWAYS" spacing="10">
+                <JFXTextField fx:id="addSubItemsField" HBox.hgrow="ALWAYS"/>
+                <HBox spacing="10" VBox.vgrow="ALWAYS">
+                <Label text="Add Sub Items" />
+                <HBox HBox.hgrow="ALWAYS" alignment="TOP_RIGHT">
+                    <Hyperlink fx:id="actualCalculation" text="What to calculate" HBox.hgrow="ALWAYS"/>
+                    <Hyperlink fx:id="specificWidget" text="Widget" HBox.hgrow="ALWAYS"/>
+                </HBox>
+                </HBox>
+            </VBox>
+        </VBox>
+        </VBox>
+    </body>
+    <actions>
+        <JFXButton fx:id="okButton" text="ADD"/>
+        <JFXButton fx:id="cancelButton" text="CANCEL"/>
+    </actions>
+</fx:root>
