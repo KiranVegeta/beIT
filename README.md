@@ -1,7 +1,8 @@
 # beIT
 A daily activity tracker application which help to increase the quality of life.
 
-Notes: package org.practice
+Notes: 
+``` package org.practice
 
 import com.google.gson.Gson
 import java.io.BufferedReader
@@ -59,4 +60,5 @@ class RestaurantWithMenu (
 data class RestaurantMenuItem (
     var description: String? = null,
     var price: Float = 0f
-)
+) 
+```
