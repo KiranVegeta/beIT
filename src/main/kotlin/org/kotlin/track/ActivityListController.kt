@@ -4,6 +4,7 @@ import com.jfoenix.controls.JFXDecorator
 import com.jfoenix.controls.JFXListCell
 import com.jfoenix.controls.JFXListView
 import javafx.collections.FXCollections
+import javafx.collections.ListChangeListener
 import javafx.event.ActionEvent
 import javafx.fxml.FXML
 import javafx.fxml.FXMLLoader
@@ -31,12 +32,18 @@ class ActivityListController : VBox() {
 
     fun init(app: Main) {
         this.app = app
-        activityList.addAll(
-            ActivityItems(0.4, "Gym", "Physical Excercise for good health"),
-            ActivityItems(0.5, "Reading", "Technological Stuffs"),
-            ActivityItems(0.9, "Sleeping", "Rest of the body")
-        )
+        app.jsonString?.activities?.forEach {
+            activityList += it
+        }
         activityItems.items = activityList
+        activityList.addListener { out: ListChangeListener.Change<out ActivityItems> ->
+            while (out.next()) {
+                if (out.wasAdded() || out.wasUpdated()) {
+                    val activityPageDetails = ActivityPageDetails(overallHealth = 1.0, activities = activityList.toList())
+                    app.jsonManager.writeJson(activityPageDetails)
+                }
+            }
+        }
         activityItems.setCellFactory { _ ->
             object : JFXListCell<ActivityItems>() {
                 override fun updateItem(item: ActivityItems?, empty: Boolean) {
