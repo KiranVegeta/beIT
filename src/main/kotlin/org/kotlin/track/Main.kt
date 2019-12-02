@@ -1,16 +1,11 @@
 package org.kotlin.track
 
-import com.jfoenix.controls.JFXDecorator
 import javafx.application.Application
-import javafx.fxml.FXMLLoader
-import javafx.scene.Parent
-import javafx.scene.Scene
 import javafx.stage.Stage
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
-import sun.rmi.server.Dispatcher
 import java.awt.Desktop
 import java.lang.Exception
 import java.net.URI
@@ -18,6 +13,9 @@ import java.net.URI
 class Main: Application(), CoroutineScope {
     lateinit var stage: Stage
     override val coroutineContext = Dispatchers.Main + Job()
+    var jsonManager : JsonManager = JsonManager()
+
+    val jsonString = jsonManager.readJson()
     override fun start(primaryStage: Stage?) {
         stage = MainStage(this@Main)
         stage.show()
