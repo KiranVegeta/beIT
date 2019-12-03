@@ -10,7 +10,6 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
 <?import javafx.scene.control.Tooltip?>
-<?import com.jfoenix.controls.JFXTreeView?>
 <VBox xmlns="http://javafx.com/javafx"
       xmlns:fx="http://javafx.com/fxml"
       fx:controller="org.kotlin.track.TasksController"
@@ -46,7 +45,7 @@
             <ProgressIndicator HBox.hgrow="ALWAYS" progress="0.5" maxWidth="80.0" maxHeight="180"/>
         </VBox>
         <VBox HBox.hgrow="ALWAYS" minHeight="850.0">
-            <JFXTreeView fx:id="tasksTree" minHeight="850.0"/>
+            <JFXListView fx:id="taskItem" minHeight="850.0"/>
         </VBox>
 
     </HBox>

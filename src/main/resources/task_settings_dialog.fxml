@@ -20,15 +20,9 @@
             <VBox VBox.vgrow="ALWAYS" spacing="10">
                 <JFXTextField fx:id="addItemsField"/>
                 <Label text="Add Item" />
-            </VBox>
-            <VBox VBox.vgrow="ALWAYS" spacing="10">
-                <JFXTextField fx:id="addSubItemsField" HBox.hgrow="ALWAYS"/>
-                <HBox spacing="10" VBox.vgrow="ALWAYS">
-                <Label text="Add Sub Items" />
                 <HBox HBox.hgrow="ALWAYS" alignment="TOP_RIGHT">
                     <Hyperlink fx:id="actualCalculation" text="What to calculate" HBox.hgrow="ALWAYS"/>
                     <Hyperlink fx:id="specificWidget" text="Widget" HBox.hgrow="ALWAYS"/>
-                </HBox>
                 </HBox>
             </VBox>
         </VBox>

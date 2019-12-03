@@ -11,7 +11,7 @@ import javafx.stage.Modality
 
 class TaskSettingsDialog(
     app: Main,
-    onDone: (String, List<String>) -> Unit
+    onDone: (String) -> Unit
 ): JFXDialogLayout(), AutoCloseable {
     @FXML
     lateinit var headerLabel: Label
@@ -47,7 +47,7 @@ class TaskSettingsDialog(
         }
 
         okButton.setOnAction {
-            onDone(addItemsField.text, addSubItemsField.text.split(";").map { it })
+            onDone(addItemsField.text)
             dialog.close()
         }
 
