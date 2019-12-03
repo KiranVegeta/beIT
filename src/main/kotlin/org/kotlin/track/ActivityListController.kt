@@ -68,7 +68,7 @@ class ActivityListController : VBox() {
                                             val task = loader.load() as VBox
                                             tasksController = loader.getController()
                                             rootPane.children.setAll(task)
-                                            tasksController.init(app)
+                                            tasksController.init(app, activityList, text)
                                         }
                                     },
                                     Label(item.activityDescription).apply {
@@ -86,7 +86,7 @@ class ActivityListController : VBox() {
 
     @FXML fun createActivity(e: ActionEvent) {
         AddActivityDialog(app) {name , desc, health ->
-            val activityItems = ActivityItems(health, name, desc)
+            val activityItems = ActivityItems(health, name, desc,null)
             activityList.add(activityItems)
         }
     }

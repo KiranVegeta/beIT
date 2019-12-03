@@ -24,6 +24,7 @@ class JsonManager {
             println("No Directory found")
             return null
         } else {
+            println(fileFolder)
             val bufferedReader: BufferedReader = detailsJson.bufferedReader()
             val inputString = bufferedReader.use { it.readText() }
             val activityPageDetailsObject: ActivityPageDetails = gson.fromJson(inputString, ActivityPageDetails::class.java)
@@ -35,7 +36,7 @@ class JsonManager {
         }
     }
 
-    fun writeJson(activityPageDetails: ActivityPageDetails) {
+    fun writeJson(activityPageDetails: ActivityPageDetails?) {
         val activityJson = gson.toJson(activityPageDetails)
 
         if (directory.exists()) {

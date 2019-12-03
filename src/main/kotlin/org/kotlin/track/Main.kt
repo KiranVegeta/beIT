@@ -15,7 +15,7 @@ class Main: Application(), CoroutineScope {
     override val coroutineContext = Dispatchers.Main + Job()
     var jsonManager : JsonManager = JsonManager()
 
-    val jsonString = jsonManager.readJson()
+    var jsonString = jsonManager.readJson()
     override fun start(primaryStage: Stage?) {
         stage = MainStage(this@Main)
         stage.show()
